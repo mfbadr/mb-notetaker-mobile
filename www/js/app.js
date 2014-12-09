@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('mb-notetaker-mobile', ['ionic', 'mb-notetaker-mobile.controllers', 'mb-notetaker-mobile.services'])
+angular.module('mb-notetaker-mobile', ['ionic', 'mb-notetaker-mobile.services'])
 
 .run(function($ionicPlatform){
       'use strict';
