@@ -8,6 +8,10 @@
         return $http.post('http://localhost:8000/login', user);
       }
 
-      return {login:login};
+      function logout(){
+        return $http.delete('http://localhost:8000/logout');
+      }
+
+      return {login:login, logout:logout};
     }]);
 })();

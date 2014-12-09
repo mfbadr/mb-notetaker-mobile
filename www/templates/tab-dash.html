@@ -4,10 +4,12 @@
     <ion-view title="Dashboard">
       <ion-content class="padding">
         <h1 class="headline">Dash</h1>
-        <div class="item item-avatar"><img ng-src="{{rootuser.avatar}}">
+        <h2 ng-show="!rootuser">Log in to view your notes</h2>
+        <div ng-show="rootuser" class="item item-avatar"><img ng-src="{{rootuser.avatar}}">
           <h3>{{rootuser.username}}</h3>
           <h6>You have {{count}} notes</h6>
         </div>
+        <button ng-click="logout()" ng-show="rootuser" class="button button-block button-assertive"><span>Log Out</span></button>
       </ion-content>
     </ion-view>
   </body>

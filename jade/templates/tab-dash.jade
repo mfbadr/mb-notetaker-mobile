@@ -3,7 +3,11 @@ html
     ion-view(title='Dashboard')
       ion-content.padding
         h1.headline Dash
-        .item.item-avatar
+        h2(ng-show='!rootuser') Log in to view your notes
+
+        .item.item-avatar(ng-show='rootuser')
           img(ng-src='{{rootuser.avatar}}')
           h3 {{rootuser.username}}
           h6 You have {{count}} notes
+        button.button.button-block.button-assertive(ng-click='logout()' ng-show='rootuser')
+          span Log Out
