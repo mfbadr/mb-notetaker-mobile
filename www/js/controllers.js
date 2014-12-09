@@ -1,6 +1,4 @@
 angular.module('mb-notetaker-mobile')
-.controller('DashCtrl', function($scope){
-})
 .controller('FriendsCtrl', function($scope, Friends){
   'use strict';
   $scope.friends = Friends.all();
