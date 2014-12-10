@@ -7,6 +7,10 @@ html
           span.tag(ng-repeat='name in note.tags') {{name}} 
         h6 Body:
         blockquote {{note.body}}
+        //.list
+          //a.item.item-thumbnail-left(ng-repeat='url in note.urls')
+        div
+          img.noteImage(ng-repeat='url in note.urls' ng-src='{{url}}')
 
     //ion-view(title='{{friend.name}}')
       //ion-content(has-header='true', padding='true')

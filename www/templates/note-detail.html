@@ -7,6 +7,9 @@
         <h6>Tags:<span ng-repeat="name in note.tags" class="tag">{{name}} </span></h6>
         <h6>Body:</h6>
         <blockquote>{{note.body}}</blockquote>
+        <!--.list//a.item.item-thumbnail-left(ng-repeat='url in note.urls')
+        -->
+        <div><img ng-repeat="url in note.urls" ng-src="{{url}}" class="noteImage"></div>
       </ion-content>
     </ion-view>
     <!--ion-view(title='{{friend.name}}')//ion-content(has-header='true', padding='true')
