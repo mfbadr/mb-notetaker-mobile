@@ -2,6 +2,8 @@ html
   body
     ion-view(title='{{note.title}}')
       ion-content.padding
+        button.button.button-calm(ng-click='snap()') Take a photo
+        button.button.button-energized(ng-click='choose()') Choose a photo
         h6 Date: {{note.updated_at | date : 'medium'}}
         h6 Tags:
           span.tag(ng-repeat='name in note.tags') {{name}} 

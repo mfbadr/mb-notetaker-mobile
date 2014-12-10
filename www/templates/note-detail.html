@@ -3,6 +3,8 @@
   <body>
     <ion-view title="{{note.title}}">
       <ion-content class="padding">
+        <button ng-click="snap()" class="button button-calm">Take a photo</button>
+        <button ng-click="choose()" class="button button-energized">Choose a photo</button>
         <h6>Date: {{note.updated_at | date : 'medium'}}</h6>
         <h6>Tags:<span ng-repeat="name in note.tags" class="tag">{{name}} </span></h6>
         <h6>Body:</h6>
