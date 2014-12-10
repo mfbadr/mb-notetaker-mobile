@@ -2,14 +2,14 @@
   'use strict';
 
   angular.module('mb-notetaker-mobile')
-    .factory('User', ['$http', function($http){
+    .factory('User', ['$http', 'origin', function($http, origin){
 
       function login(user){
-        return $http.post('http://localhost:8000/login', user);
+        return $http.post(origin + '/login', user);
       }
 
       function logout(){
-        return $http.delete('http://localhost:8000/logout');
+        return $http.delete(origin + '/logout');
       }
 
       return {login:login, logout:logout};
