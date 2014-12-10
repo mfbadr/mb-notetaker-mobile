@@ -6,6 +6,8 @@
     .controller('NoteDetailCtrl', ['$scope', 'Note', 'User', '$rootScope', '$state', function($scope, Note, User, $rootScope, $state){
 
       var noteId = $state.params.noteId;
+      console.log('NOTE DETAIL CONTROLLER INIT');
+
       Note.findOne(noteId).then(function(response){
         $scope.note = response.data[0];
       }, function(response){
@@ -16,6 +18,11 @@
         //console.log(b64);
         Note.upload(noteId, b64).then(function(response){
           console.log('image uploaded successfully');
+          Note.findOne(noteId).then(function(response){
+            $scope.note = response.data[0];
+          }, function(response){
+              console.log('something went wrong', response);
+          });
         }, function(response){
           console.log('something went wrong when uploading');
         });
