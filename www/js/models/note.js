@@ -17,6 +17,10 @@
         return $http.get(origin + '/notes/' + noteId);
       }
 
-      return {count:count, list:list, findOne:findOne};
+      function upload(noteId, b64){
+        return $http.post(origin + '/mobileupload', {noteId:noteId, b64:b64});
+      }
+
+      return {count:count, list:list, findOne:findOne, upload:upload};
     }]);
 })();
