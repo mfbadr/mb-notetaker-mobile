@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <ion-view title="Your Notes">
+      <ion-content class="padding">
+        <h3 ng-show="!rootuser">Log in to see your notes!</h3>
+        <div ng-show="rootuser">
+          <You>are logged in</You>
+        </div>
+        <ion-list>
+          <ion-item ng-repeat="note in notes" type="item-text-wrap" href="#/tab/notes/{{note.note_id}}">{{note.title}}</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-view>
+  </body>
+</html>

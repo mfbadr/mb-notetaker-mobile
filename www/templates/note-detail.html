@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <ion-view title="{{note.title}}">
+      <ion-content class="padding">
+        <h6>Date: {{note.updated_at | date : 'medium'}}</h6>
+        <h6>Tags:<span ng-repeat="name in note.tags" class="tag">{{name}} </span></h6>
+        <h6>Body:</h6>
+        <blockquote>{{note.body}}</blockquote>
+      </ion-content>
+    </ion-view>
+    <!--ion-view(title='{{friend.name}}')//ion-content(has-header='true', padding='true')
+    -->
+  </body>
+</html>

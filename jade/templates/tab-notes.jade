@@ -1,0 +1,10 @@
+html
+  body
+    ion-view(title='Your Notes')
+      ion-content.padding
+        h3(ng-show='!rootuser') Log in to see your notes!
+        div(ng-show='rootuser')
+          You are logged in
+        ion-list
+          ion-item(ng-repeat='note in notes', type='item-text-wrap', href='#/tab/notes/{{note.note_id}}')
+            | {{note.title}}
